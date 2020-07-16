@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="title-header">
+				<div class="title">
+					<i class="fa fa-list-alt"></i>
+					<h3 class="head-title">Patient Information</h3>
+				</div>
+            </div>
+            <div class="bgWhite" *ngFor="let patient of patientInfoArr">
+                <p>Patient Name : {{patient.name}}</p>
+                <p>Date of Birth : {{patient.dob}}</p>
+                <p>Gender : {{patient.gender}}</p>
+                <p>Address : {{patient.address}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+

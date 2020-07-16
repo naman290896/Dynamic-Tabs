@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="bgWhite user-des text-center">
+                <div class="profile-userpic mb-3">
+                    <i class="fa fa-user"></i>
+                </div>
+                <div class="profile-usertitle">
+                    <p class="profile-usertitle-name"> Test </p>
+                    <p class="profile-usertitle-job"> </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="title-header">
+                <div class="title">
+                    <i class="fas fa-procedures"></i>
+                    <h3 class="head-title">My Account</h3>
+                </div>
+                <div class="nav nav-tabs">
+                    <li class="nav-item"><a class="nav-link" [routerLink]="['/account/myprofile']" [routerLinkActive]="'active'">My Profile</a></li>
+                    <li class="nav-item"><a class="nav-link"  [routerLink]="['/account/changepassword']" [routerLinkActive]="'active'">Change Password</a></li>
+                    <li class="nav-item"><a class="nav-link"  [routerLink]="['/account/changesecurityquestions']" [routerLinkActive]="'active'">Change Security Questions</a></li>
+                </div>
+            </div>
+            <div class="bgWhite">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div id="header">
+    <div class="container">
+        <div id="user" class="dropdown pull-right" dropdown>
+            <div class="dropdown-toggle" id="userDropdown" dropdownToggle aria-controls="dropdown-basic">
+                <i class="fa fa-user"></i>
+            </div>
+            <div class="userDropdownContent dropdown-menu" *dropdownMenu aria-labelledby="button-basic">							   
+                <span class="username-section" (click)="usernameClick()"><i class="fa fa-user"></i><p>{{username}}</p></span>
+                <a [routerLink]="['/account/changesecurityquestions']" [routerLinkActive]="'active'"><span><i class="fa fa-question-circle"></i>Change Secret Questions</span></a>
+                <a [routerLink]="['/account/changepassword']" [routerLinkActive]="'active'"><span><i class="fa fa-lock"></i>Change Password</span></a>
+                <div class="logout-section"><span id="menuLogout">Logout</span></div>
+            </div>
+        </div>
+    </div>
+</div>

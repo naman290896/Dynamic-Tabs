@@ -1,0 +1,27 @@
+<div class="title-header">
+    <div class="title">
+        <i class="fa fa-hospital-o"></i>
+        <h3 class="head-title">My Users</h3>
+    </div>
+</div>
+<table class="mat-elevation-z8" mat-table [dataSource]="myPatientArr">
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Patient Name </th>
+        <td mat-cell *matCellDef="let patient"> {{patient.name}} </td>
+    </ng-container>
+    <ng-container matColumnDef="dob">
+        <th mat-header-cell *matHeaderCellDef> DOB </th>
+        <td mat-cell *matCellDef="let patient"> {{patient.dob}} </td>
+    </ng-container>
+    <ng-container matColumnDef="gender">
+        <th mat-header-cell *matHeaderCellDef> Gender </th>
+        <td mat-cell *matCellDef="let patient"> {{patient.gender}} </td>
+    </ng-container>
+    <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let patient"> <span class="text-info">View More</span> </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="myPatientColumns" ></tr>
+    <tr mat-row *matRowDef="let row; columns: myPatientColumns;" (click)="myPatientRowClick(row)"></tr>
+</table>
+<mat-paginator #paginator [pageSizeOptions]="[5, 7]" showFirstLastButtons></mat-paginator>

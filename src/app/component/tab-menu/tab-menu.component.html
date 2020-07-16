@@ -1,0 +1,11 @@
+<div class="panel-heading">
+	<ul class="nav nav-tabs">
+		<li><a class="tab_link" routerLink="/dashboard" [routerLinkActive]="'active'">Dashboard</a></li>
+		<li *ngFor="let tab of tabList; let i = index">
+			<a class="tab_link" routerLink="/{{tab.type}}/{{tab.id}}" [routerLinkActive]="'active'">
+				<span>{{tab.name}}</span>
+			</a>
+			<i class="fa fa-times" (click)="closeTab(i)"></i>
+		</li>
+	</ul>
+</div>

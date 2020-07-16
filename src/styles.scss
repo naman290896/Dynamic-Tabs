@@ -1,0 +1,229 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$tabApp-primary: mat-palette($mat-indigo);
+$tabApp-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$tabApp-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$tabApp-theme: mat-light-theme($tabApp-primary, $tabApp-accent, $tabApp-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($tabApp-theme);
+
+/* Font-Family Start*/
+@font-face{ 
+	font-family: 'Poppins';
+	src: url('assets/fonts/Poppins/Poppins-Black.ttf') format('truetype');
+}
+@font-face{ 
+	font-family: 'Poppins-Light';
+	src: url('assets/fonts/Poppins/Poppins-Light.ttf') format('truetype');
+}
+/* Font-Family End*/
+
+body {
+    background-color: #f2f3f8;
+	font-size: 13px;
+    font-weight: 300;
+    font-family: "Poppins-Light";
+    color: #646c9a;
+    .main-content{
+        margin:40px 0 100px;
+	}
+	a, tr{
+		cursor:pointer;
+	}
+}
+.asterisk {
+    vertical-align: super;
+    font-size: 8px;
+    color: red;
+    position: relative;
+	top: -5px;
+}
+table{
+	width:100%;
+}
+.nav-tabs{
+	margin-bottom: 0 !important;
+	border-bottom: 0;
+	.nav-link.active{
+		background-color: rgba(93, 120, 255, 0.1);
+		color: #5d78ff;
+		border: 0;
+	}
+}
+.loginForm{
+	margin:0 auto;
+	h3{
+		background: #646c9a;
+		margin: 0 !important;
+		color: #fff;
+		padding: 10px 0;
+	}
+}
+#header {
+    position: relative;
+    background: #201f2b;
+    transition: all .3s ease;
+    width: 100%;
+    z-index: 9;
+	top: 0;
+	padding: 8px 0;
+	height:52px;
+}
+.title-header{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    height: 50px;
+    padding: 0 15px;
+    border-bottom: 1px solid #ebedf2;
+    background-color:#fff;
+    .head-title{
+        margin: 0;
+        padding: 0;
+        font-size: 16px;;
+        font-weight: 500;
+        color: #48465b;
+        display:inline-block;
+    }
+    .title i{
+        padding-right: 10px;
+        font-size: 24px;
+        color: #2c77f4;
+    }
+}
+.bgWhite {
+    background: #fff !important;
+    padding:15px;
+}
+.panel-heading {
+	position: relative;
+    z-index: 8;
+	background-color: #f8f9fb;
+	border-bottom: solid;
+	width: 100%;
+	.nav-tabs {
+		border: 0;
+		li {
+			margin: 0;
+			border-right: 1px solid rgba(0, 0, 0, 0.2);
+			a {
+				&:hover {
+					background-color: #fff;
+				}
+				text-decoration: none;
+				color: #646c9a;
+				padding: 12px 30px 12px 10px;
+				display: inline-block;
+				font-size: 14px;
+			}
+			a.active {
+				background-color: #fff;
+			}
+			i {
+				float: right;
+				padding: 15px 10px;
+				cursor: pointer;
+			}
+		}
+	}
+	.tab-dismiss {
+		cursor: pointer;
+	}
+}
+#user{ 
+	.dropdown-toggle{
+    	vertical-align: middle;	
+		background-color: #f1f2f5;
+		padding: 7px 10px;
+		border-radius: 50%;
+		&::after { 
+			content: none; 
+		}
+		i{
+			font-size: 20px;
+			vertical-align: sub;
+		}
+	}
+	.userDropdownContent{
+		left: auto !important;
+		right: 0 !important;
+		background-color: #f1f2f5;
+		width: 240px !important;
+		padding: 0;
+		font-size: 14px;
+		top: 44px !important;
+		box-shadow: 0 0 50px 0 rgba(82, 63, 105, 0.15);
+		span {
+			display: flex;
+			align-items: center;
+			padding: 10px 16px;
+			border-bottom: 1px solid #f7f8fa;
+			transition: background-color .3s ease;
+			transition: color .3s ease;
+			color: #595d6e;
+			i {
+				color: #649bf6;
+				padding-right: 14px;
+			}
+		}
+		.username-section {
+			i{
+				font-size: 36px;
+			}
+			display: flex;
+			align-items: flex-start;
+			padding: 1rem;
+			background-color: #f9fafe;
+		}
+	}
+} 
+.profile-userpic{
+	display: inline-flex;
+    border-radius: 50%;
+    padding: 20px 25px;
+    background: #ddd;
+    font-size: 50px;
+}
+#footer {
+	display: flex;
+	position: fixed;
+	width: 100%;
+    background: #fff;
+    bottom: 0;
+	padding: 20px 0;	
+	.orgContact{
+		display:inline-block;
+		margin:0
+	}
+	.inline-list{ 
+		float: right;
+		margin:0;
+		li {
+			display: inline-block;
+			a {
+				margin: 0 0 0 1.25rem;
+				padding: 0;
+				color: #595d6e;
+			}
+		}
+	}
+}
